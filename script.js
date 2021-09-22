@@ -5,8 +5,13 @@ var fetchImdbDrama = document.getElementById('dramaImdbButton');
 var listOfMoviesImdbFamily = document.getElementById('boxOfDVDsFamily');
 var fetchImdbFamily = document.getElementById('familyImdbButton');
 
+fetchImdbDrama.addEventListener('click', getApiDataImdb);
+fetchImdbFamily.addEventListener('click', getApiDataImdb);
 
-function getApiDataImdb () {var requestURL = 'https://data-imdb1.p.rapidapi.com/movie/byYear/2000/byGen/Drama/'
+
+function getApiDataImdb () {
+    console.log(event.currentTarget);
+    var requestURL = 'https://data-imdb1.p.rapidapi.com/movie/byYear/2000/byGen/Drama/'
     fetch(requestURL, {"method": "GET",  "headers": {
 		"x-rapidapi-host": "data-imdb1.p.rapidapi.com",
 		"x-rapidapi-key": "f567ffdbe0msh246ba4a9ef34553p1195c8jsn6e946070d30d"
@@ -27,8 +32,7 @@ function getApiDataImdb () {var requestURL = 'https://data-imdb1.p.rapidapi.com/
      });    
     
 }
-fetchImdbDrama.addEventListener('click', getApiDataImdb);
-fetchImdbFamily.addEventListener('click', getApiDataImdb);
+
 
 function getApiOmdb () {var requestURL = 'http://www.omdbapi.com/?i=tt3896198&apikey=bf124b81&t=godfather&plot=full'
     fetch(requestURL)

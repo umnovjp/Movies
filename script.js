@@ -4,16 +4,25 @@ var listOfMoviesImdbDrama = document.getElementById('boxOfDVDsDrama');
 var fetchImdbDrama = document.getElementById('dramaImdbButton');
 var listOfMoviesImdbFamily = document.getElementById('boxOfDVDsFamily');
 var fetchImdbFamily = document.getElementById('familyImdbButton');
-
-// fetchImdbDrama = document.querySelector('#dramaImdbButton')
-// fetchImdbFamily = document.querySelector('#familyImdbButton')
+var listOfMoviesImdbThriller = document.getElementById('boxOfDVDsThriller');
+var fetchImdbThriller = document.getElementById('thrillerImdbButton');
+var listOfMoviesImdbComedy = document.getElementById('boxOfDVDsComedy');
+var fetchImdbComedy = document.getElementById('comedyImdbButton');
+var listOfMoviesImdbAction = document.getElementById('boxOfDVDsAction');
+var fetchImdbAction = document.getElementById('actionImdbButton');
 
 fetchImdbDrama.addEventListener('click', getApiDataImdb);
 fetchImdbFamily.addEventListener('click', getApiDataImdb);
+fetchImdbThriller.addEventListener('click', getApiDataImdb);
+fetchImdbComedy.addEventListener('click', getApiDataImdb);
+fetchImdbAction.addEventListener('click', getApiDataImdb);
 
-
-function getApiDataImdb () {
-    console.log(event.currentTarget);
+function getApiDataImdb (event) {
+    var buttonInput = console.log(event.currentTarget);
+   // document.writeln(String(buttonInput));
+    var genre = String(buttonInput);
+    genre.split('=');
+    console.log(genre[1] + ' ' + genre[0]);
     var requestURL = 'https://data-imdb1.p.rapidapi.com/movie/byYear/2000/byGen/Drama/'
     fetch(requestURL, {"method": "GET",  "headers": {
 		"x-rapidapi-host": "data-imdb1.p.rapidapi.com",

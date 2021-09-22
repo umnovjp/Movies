@@ -1,7 +1,9 @@
 var listOfMoviesOMDB = document.getElementById('boxOfDVDsOmdb');
 var fetchOmdbButton = document.getElementById('searchOmdbButton');
-var listOfMoviesWiki = document.getElementById('boxOfDVDsWiki');
-var fetchWikiButton = document.getElementById('searchWikiButton');
+var listOfMoviesImdbDrama = document.getElementById('boxOfDVDsDrama');
+var fetchImdbDrama = document.getElementById('dramaImdbButton');
+var listOfMoviesImdbFamily = document.getElementById('boxOfDVDsFamily');
+var fetchImdbFamily = document.getElementById('familyImdbButton');
 
 
 function getApiDataImdb () {var requestURL = 'https://data-imdb1.p.rapidapi.com/movie/byYear/2000/byGen/Drama/'
@@ -15,26 +17,18 @@ function getApiDataImdb () {var requestURL = 'https://data-imdb1.p.rapidapi.com/
          .then(function(data) {console.log(data);
          for (i=0; i<5; i++) {var movieName = document.createElement('p');
                                        //  var movieYear = document.createElement('p');
-                                         movieName.textContent = data[i];
-                                         console.log(data[i] + ' title');
+                                         movieName.textContent = data.Data[i].title;
+                                         console.log(data.Data[i].title + ' title');
                                        //  console.log(data[i].Year + 'year');
                                        //  movieYear.textContent = data[i].Awards;
-                                         listOfMoviesWiki.appendChild(movieName);
+                                         listOfMoviesImdbDrama.appendChild(movieName);
                                        //  boxOfDVDsOmdb.appendChild(movieYear);
          }
      });    
     
-
-     //   for (i=0; i<data.length; i++) {var movieName = document.createElement('p');
-     //       var movieYear = document.createElement('div');
-      //      movieName.textContent = data[i].Title;
-      //      movieYear.textContent = data[i].Year;
-      //      boxOfDVDsWiki.appendChild(movieName);
-      //      boxOfDVDsWiki.appendChild(movieYear);
-     //   }
-    //});
 }
-fetchWikiButton.addEventListener('click', getApiDataImdb);
+fetchImdbDrama.addEventListener('click', getApiDataImdb);
+fetchImdbFamily.addEventListener('click', getApiDataImdb);
 
 function getApiOmdb () {var requestURL = 'http://www.omdbapi.com/?i=tt3896198&apikey=bf124b81&t=godfather&plot=full'
     fetch(requestURL)
@@ -64,6 +58,7 @@ var pTag1 = document.createElement("p");
     document.getElementById('question').appendChild(pTag1);
     var input1 = document.createElement("input");
     input1.setAttribute("class", "input")
+    input1.setAttribute("placeholder", "year")
     document.getElementById('input2').appendChild(input1);
 
  

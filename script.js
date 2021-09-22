@@ -20,10 +20,10 @@ fetchImdbAction.addEventListener('click', getApiDataImdb);
 function getApiDataImdb (event) {
     var buttonInput = console.log(event.currentTarget);
    // document.writeln(String(buttonInput));
-    var genre = String(buttonInput);
-    genre.split('=');
-    console.log(genre[1] + ' ' + genre[0]);
-    var requestURL = 'https://data-imdb1.p.rapidapi.com/movie/byYear/2000/byGen/Drama/'
+    var genre = event.currentTarget.value;
+    console.log(genre);
+    // var requestURL = 'https://data-imdb1.p.rapidapi.com/movie/byYear/2000/byGen/Drama/'
+    var requestURL = 'https://data-imdb1.p.rapidapi.com/movie/byYear/2000/byGen/' + genre + '/';
     fetch(requestURL, {"method": "GET",  "headers": {
 		"x-rapidapi-host": "data-imdb1.p.rapidapi.com",
 		"x-rapidapi-key": "f567ffdbe0msh246ba4a9ef34553p1195c8jsn6e946070d30d"
@@ -38,7 +38,12 @@ function getApiDataImdb (event) {
                                          console.log(data.Data[i].title + ' title');
                                        //  console.log(data[i].Year + 'year');
                                        //  movieYear.textContent = data[i].Awards;
-                                         listOfMoviesImdbDrama.appendChild(movieName);
+                                       if (genre = 'Drama') {listOfMoviesImdbDrama.appendChild(movieName);}
+                                         else if (genre = 'Family') {listOfMoviesImdbFamily.appendChild(movieName);}
+                                         else if (genre = 'Thriller') {listOfMoviesImdbThriller.appendChild(movieName);}
+                                         else if (genre = 'Comedy') {listOfMoviesImdbComedy.appendChild(movieName);}
+                                         else if (genre = 'Action') {listOfMoviesImdbAction.appendChild(movieName);}
+                                         else {};
                                        //  boxOfDVDsOmdb.appendChild(movieYear);
          }
      });    

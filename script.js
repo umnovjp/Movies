@@ -5,8 +5,8 @@ var fetchImdbDrama = document.getElementById('dramaImdbButton');
 var listOfMoviesImdbFamily = document.getElementById('boxOfDVDsFamily');
 var fetchImdbFamily = document.getElementById('familyImdbButton');
 
-fetchImdbDrama = document.querySelector('#dramaImdbButton')
-fetchImdbFamily = document.querySelector('#familyImdbButton')
+// fetchImdbDrama = document.querySelector('#dramaImdbButton')
+// fetchImdbFamily = document.querySelector('#familyImdbButton')
 
 fetchImdbDrama.addEventListener('click', getApiDataImdb);
 fetchImdbFamily.addEventListener('click', getApiDataImdb);

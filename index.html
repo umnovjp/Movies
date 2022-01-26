@@ -12,13 +12,16 @@
 
   <body>
     
-    <header>
-
-      <h1>Greatestttt Movie Recommendations!</h1>
-
+    <header style="height: 250px;">
+      <h1 style="text-align:center" id = 'top5D'>Movie Recommendations </h1>
+      <h2 style="text-align:center">Click banners below to rent these movies at Redbox or buy them at Amazon.com</h2>
+      <div>
+        <button class = 'yearEntry' style = "background-image: url('./redbox_logo.png');" onclick ="window.location.href = 'https://www.redbox.com';"></button>
+        <button class = 'yearEntry' style = "background-image: url('./amazon_logo2.png');" onclick ="window.location.href = 'https://www.amazon.com';" ></button>
+      </div><br>
     </header>
-    <button class = 'yearEntry' style = "background-image: url('./redbox_logo.png');" onclick ="window.location.href = 'https://www.redbox.com';"><p>Rent these movies at Red Box</p></button>
-    <button class = 'yearEntry' style = "background-image: url('./amazon_logo2.png');" onclick ="window.location.href = 'https://www.amazon.com';" >Buy these movies at Amazon</button>
+   
+
     
     <p> </p>
 <script></script>
@@ -29,49 +32,45 @@
       <a href="#comedy">Comedy</a>
       <a href="#action">Action</a>
     </div>
-    <div class = 'yearEntry'>
-      <input id = 'myInput'>
-        <button class = 'searchParameter' type = 'button' id = 'enterYear' onclick = 'getInputValue();'>Click me to enter year</button>
-    </div>
+    <section>
+
+  
     <!--this input is for future use. it will allow user to enter year, which is now set to 2021-->
     <div class="main">
+
+      <div>
+        <input id = 'myInput' value = 2021 >
+          <button class = 'yearEntry2' type = 'button' id = 'enterYear' onclick = 'getInputValue();'>Enter year</button>
+      </div>
      
       <div id = 'input2'>
         
-        <button class = 'searchParameter' id = 'dramaImdbButton' value  = 'Drama'>Click me to search IMDB Drama</button>
-        <button class = 'searchParameter' id = 'familyImdbButton' value = 'Family'>Click me to search IMDB Family</button>
-        <button class = 'searchParameter' id = 'thrillerImdbButton' value = 'Thriller'>Click me to search IMDB Thrillers</button>
-        <button class = 'searchParameter' id = 'comedyImdbButton' value = 'Comedy'>Click me to search IMDB Comedy</button>
-        <button class = 'searchParameter' id = 'actionImdbButton' value = 'Action'>Click me to search IMDB Action</button>
+        <button class = 'searchParameter' id = 'dramaImdbButton' value  = 'Drama'>Search IMDB Drama</button>
+        <button class = 'searchParameter' id = 'familyImdbButton' value = 'Family'>Search IMDB Family</button>
+        <button class = 'searchParameter' id = 'thrillerImdbButton' value = 'Thriller'>Search IMDB Thrillers</button>
+        <button class = 'searchParameter' id = 'comedyImdbButton' value = 'Comedy'>Search IMDB Comedy</button>
+        <button class = 'searchParameter' id = 'actionImdbButton' value = 'Action'>Search IMDB Action</button>
         
 
         
       </div> <!--this div creates input area to enter search parameters-->
       
-      
-
-      <h2>Top 5 dramas</h2>
+      <h3 id = 'drama'>Top 5 dramas</h3>
       <div id = 'boxOfDVDsDrama'></div>      
 
-      <h2>Top 5 family movies</h2>
+      <h3>Top 5 family movies</h3>
         <div id = 'boxOfDVDsFamily'></div>
-        <h2>Top 5 thrillers</h2>
+        <h3>Top 5 thrillers</h3>
         <div id = 'boxOfDVDsThriller'></div>
 
-        <h2>Top 5 comedies</h2>
+        <h3>Top 5 comedies</h3>
         <div id = 'boxOfDVDsComedy'></div>
 
-        <h2>Top 5 action movies</h2>
+        <h3>Top 5 action movies</h3>
         <div id = 'boxOfDVDsAction'></div>
     
-      <section>
-
-        <h4></h4>
-  
-      </section>
-
-    
     </div>
+  </section>
 
     <script src = "./script.js"></script>
 

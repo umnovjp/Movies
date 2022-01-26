@@ -30,6 +30,7 @@ inputYear = parseInt(inputVal);
 console.log(inputYear);
 }
 
+
 console.log('outside finction ' + inputYear);
 fetchImdbDrama.addEventListener('click', getApiDataImdb);
 fetchImdbFamily.addEventListener('click', getApiDataImdb);
@@ -40,6 +41,10 @@ fetchImdbAction.addEventListener('click', getApiDataImdb);
 function getApiDataImdb(event) {
   var genre = event.currentTarget.value;
   console.log(genre);
+  // three lines below are supposed to add year to the header but they do it multiple times if I click multiple buttons. disabled for now
+//   var movieYear = document.createElement('span');
+// movieYear.innerHTML = inputYear;
+// document.getElementById('top5D').appendChild(movieYear);
 
   var requestURL = 'https://data-imdb1.p.rapidapi.com/movie/byYear/' + inputYear + '/byGen/' + genre + '/';
   fetch(requestURL, {
@@ -54,10 +59,7 @@ function getApiDataImdb(event) {
     })
     .then(function (data) {
       console.log(data);
-      // console.log(data.results);
-      // console.log(data.results[0]);
-      // console.log(data.results[0].imdb_id);
-      // console.log(data.results[0].title);
+
       for (i = 0; i < 5; i++) {
         var movieName = document.createElement('p');
         movieName.textContent = data.results[i].title;
@@ -72,6 +74,7 @@ function getApiDataImdb(event) {
         var requestPosterOmdb = 'http://img.omdbapi.com/?i=tt3896198&apikey=bf124b81&t=' + movieTitleFormatted4 + '&plot=full'
         // end of ugly method
 
+
         //start second fetch
         fetch(requestURLOmdb)
           .then(function (response) {
@@ -81,6 +84,7 @@ function getApiDataImdb(event) {
             var object1 = data;
             // I definitely can convert following five if .. else if ... else if ... pieces to one loop later
             if (genre == 'Drama') {
+
               var movieName1 = document.createElement('p');
               movieName1.innerHTML = object1.Title;
               document.getElementById('boxOfDVDsDrama').appendChild(movieName1);
@@ -103,7 +107,7 @@ function getApiDataImdb(event) {
               movieName1.innerHTML = object1.Title;
               document.getElementById('boxOfDVDsThriller').appendChild(movieName1)
               var movieData = document.createElement('p');
-              movieData.innerHTML = 'Director: ' + object1.Director + ', Actors: ' + object1.Actors + ', Rating ' + object1.Metascore;
+              movieData.innerHTML = 'Director: ' + object1.Director + ', Actors: ' + object1.Actors + ', Rating ' + object1.Metascore + ', Plot: ' + object1.Plot;
               document.getElementById('boxOfDVDsThriller').appendChild(movieData)
               thrillerCount++;
             }
@@ -112,7 +116,7 @@ function getApiDataImdb(event) {
               movieName1.innerHTML = object1.Title;
               document.getElementById('boxOfDVDsComedy').appendChild(movieName1)
               var movieData = document.createElement('p');
-              movieData.innerHTML = 'Director: ' + object1.Director + ', Actors: ' + object1.Actors + ', Rating ' + object1.Metascore;
+              movieData.innerHTML = 'Director: ' + object1.Director + ', Actors: ' + object1.Actors + ', Rating ' + object1.Metascore + ', Plot: ' + object1.Plot;
               document.getElementById('boxOfDVDsComedy').appendChild(movieData)
               comedyCount++;
             }
@@ -121,7 +125,7 @@ function getApiDataImdb(event) {
               movieName1.innerHTML = object1.Title;
               document.getElementById('boxOfDVDsAction').appendChild(movieName1)
               var movieData = document.createElement('p');
-              movieData.innerHTML = 'Director: ' + object1.Director + ', Actors: ' + object1.Actors + ', Rating ' + object1.Metascore;
+              movieData.innerHTML = 'Director: ' + object1.Director + ', Actors: ' + object1.Actors + ', Rating ' + object1.Metascore + ', Plot: ' + object1.Plot;
               document.getElementById('boxOfDVDsAction').appendChild(movieData)
               thrillerCount++;
             }

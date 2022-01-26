@@ -1,47 +1,15 @@
-#MovieReviews
+# Movie Reviews
 
-in this project entitled "Movie Reviews" it utilizes information from openly available online databases to pull down small lists of movies according to their genres.
+We created this website for a user to search for movies by year or genre. First, a user has to enter year. default is set to 2021.  ![image](https://user-images.githubusercontent.com/88174852/151253651-469a348f-3077-4847-8972-bd2e85603c4b.png)
 
-The lists are accessed through an API entitled "OMDb Api" as well as a second API entitled "Data-Imdb"
-Once accessed the lists populate the relevant movie category that they happen to fall under.
-For example when a query is ran for a movies of a particular genre, that information is then taken
-to the MovieReviews website, this is done by clicking a button which is programmed to perform the query
-from there, the title populates the section that is labeled on the button for each section.
+As I enter 2018 and hit family button, a list of 5 family movies is populated. It includes title, film director, actors, rating and plot. 
+![image](https://user-images.githubusercontent.com/88174852/151254443-f196c249-78ad-40c0-95f3-73c1a165f1d2.png)
 
-This website consists of an HTML file, JavaScript file, and a CSS file in order to format the page.
+And as I hit OMDB Family button, list of 5 comedies shows up. ![image](https://user-images.githubusercontent.com/88174852/151254611-d657d619-ea8f-4dd6-ae18-248ffef64ba8.png)
+I can click genre in the side bar to navigate to different genre. And when I click rent me on RedHat or buy me at Amazon buttons, I am forwarded to their websites.
 
-All of the necessary queries, and event listeners can be found in the JavaScript file "script.js"
+## Technical criteria
+This app uses two external APIs. One is https://data-imdb1.p.rapidapi.com/, It responds with list of movie titles only as I search by year and genre. And another API http://www.omdbapi.com/ shows me director, actors, plot, rating as I search by title. We used Figma (not bootstrap) to create page frame. It is interactive, as it can accept year. It does not use alerts. It is responsive. It has polished UI and high-quality README fila that you are reading. 
 
-We utilized several buttons for categories that we believed would be the most popular.
-
-The API "OMDb api" we used offers multiple clicks a month with a limit on the amount we can click for free monthly.
-
-When I click button with action movies,
-
-![image](https://user-images.githubusercontent.com/88174852/134790220-369602d6-1721-49cf-9de2-2a4c66f00068.png)
-
-
-title of each of five movies is displayed along with film director, actors, rating, and plot. 
-And when I click comedy button, they are displayed as well
-
-![image](https://user-images.githubusercontent.com/88174852/134790257-69ab098d-c89d-4feb-946c-dd628e1fa9d5.png)
-
-more movies are added when I click drama, family, thriller buttons. We added posters to be displayed. We are confident links are correct. But for some reason, same poster is displayed every time. So code is still there but it is disabled. I am sure we can add this functionality later, when we get help from our TA. 
-![image](https://user-images.githubusercontent.com/88174852/134790773-a175a467-ed39-41f5-b6c2-32e86039e7c7.png)
-
-And when I click rent me on RedHat or buy me at Amazon buttons, I am forwarded to their websites.
-
-And when I click to sidebar button it lands me at proper <div>.
-
-We used two APIs, first returns list of movies by genre and year from IMDB API. Second takes movie title from first web API then sends request to get detailed movie info from OMDB web API.
-
-In Script.js file you'll find most of what makes this project work. It dynamically puts text on page as I click buttons. 
-
-Styles are created using style.css file.  
-
-Live page is approved at https://johnpaulgeorgeringo.github.io/MovieReviews/. But it does not work as planned. It is the result of a Microsoft setting.
-![image](https://user-images.githubusercontent.com/88174852/134790915-69fd1679-7d04-49ec-88a8-67b032dde0b6.png)
-
-
-
-Thanks for reading
+## Links
+Original project page is here: https://github.com/JohnPaulGeorgeRingo. But our team was understaffed during actual project 1. Not every feature was working. And we were not able to revive the page after that because it was locked. So I just cloned that repo and updated. 

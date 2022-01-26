@@ -1,17 +1,14 @@
-.h1 {
-
+h1 {
+color: red;
 }
-
-.h2 {
-
+h2 {
+  Color: red;
 }
-
-.h3 {
-
+h3 {
+Color: red;
 }
-
-.p {
-
+p {
+color: gray
 }
 
 #parTag1 { font-size: 18px;
@@ -80,9 +77,21 @@ background-blend-mode: red;
 
 .main {
   margin-left: 160px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
+  font-size: 14px; /* Increased text to enable scrolling */
   padding: 0px 10px;
 }
+
+.yearEntry{float:right;
+  font-size:20px;
+width: 347px;
+height: 132px;
+color: lightblue;
+vertical-align: top;
+}
+
+.yearEntry p {text-align: left;
+;}
+
 
 .animation-timing-fuction {
 

@@ -13,4 +13,4 @@ This app uses two external APIs. One is https://data-imdb1.p.rapidapi.com/, It r
 
 ## Links
 Original project page is here: https://github.com/JohnPaulGeorgeRingo. But our team was understaffed during actual project 1. Not every feature was working. And we were not able to revive the page after that because it was locked. So I just cloned that repo and updated. New GitHub link is https://github.com/umnovjp/Movies/, New live link is https://umnovjp.github.io/Movies/. Live link is not fully operational as i writes this text. Here is error message related to GitHub policies.
-I am looking for a way around. 
+I am looking for a way around. Presentation was made during the class. Watch video here: https://bootcampspot.com/sessions/1744470/videos/142254. 

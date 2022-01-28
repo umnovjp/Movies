@@ -24,13 +24,13 @@ var actionCount = 0;
 
 // two lines below will allow user to search by year
 function getInputValue() {var inputVal = document.getElementById('myInput').value;
-console.log(inputVal);
+console.log('inputVal'+inputVal);
 console.log(typeof inputVal);
 inputYear = parseInt(inputVal);
-console.log(inputYear);
+console.log('inputYear'+inputYear);
 }
 
-
+localStorage.setItem('inputYear', inputVal);
 console.log('outside finction ' + inputYear);
 fetchImdbDrama.addEventListener('click', getApiDataImdb);
 fetchImdbFamily.addEventListener('click', getApiDataImdb);
@@ -70,7 +70,7 @@ function getApiDataImdb(event) {
         movieTitleFormatted2 = movieTitleFormatted1.replace(" ", "%20");
         movieTitleFormatted3 = movieTitleFormatted2.replace(" ", "%20");
         movieTitleFormatted4 = movieTitleFormatted3.replace(" ", "%20");
-        var requestURLOmdb = 'http://www.omdbapi.com/?i=tt3896198&apikey=bf124b81&t=' + movieTitleFormatted4 + '&plot=full'
+        var requestURLOmdb = 'https://www.omdbapi.com/?i=tt3896198&apikey=bf124b81&t=' + movieTitleFormatted4 + '&plot=full'
         var requestPosterOmdb = 'http://img.omdbapi.com/?i=tt3896198&apikey=bf124b81&t=' + movieTitleFormatted4 + '&plot=full'
         // end of ugly method
 

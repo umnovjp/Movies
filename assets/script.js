@@ -14,7 +14,7 @@ var fetchImdbAction = document.getElementById('actionImdbButton');
 var movieTitle;
 var object1;
 var inputVal = '2021';
-var inputYear;
+var inputYear = 2021;
 //these five variables are created to display movies 5-9, 10-14, etc. They do not work yet
 var dramaCount = 0;
 var familyCount = 0;
